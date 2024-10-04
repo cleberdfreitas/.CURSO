@@ -1,0 +1,30 @@
+CASO OCORRA ERRO DE POLITICA DE SCRIPTS, ABRIR O POWERSHELL COMO ADMIN
+ANTES DO USO: Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+DEPOIS DO USO: Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Restricted
+
+# Criar um novo ambiente virtual
+python -m venv ./venv
+
+# Ativar o ambiente virtual (Windows)
+.\nome_do_ambiente\Scripts\activate
+
+# Desativar o ambiente virtual
+deactivate
+
+Além disso, é altamente recomendado criar um arquivo requirements.txt para listar as dependências do projeto. 
+Isso facilita a replicação do ambiente em diferentes máquinas e ambientes. 
+O arquivo requirements.txt pode ser gerado com o seguinte comando:
+
+pip freeze
+pip freeze > requirements.txt
+
+O arquivo requirements.txt é vital para documentar e compartilhar as dependências do projeto. 
+Ao listar explicitamente as versões das bibliotecas utilizadas, garantimos que outros desenvolvedores 
+ou sistemas possam reproduzir exatamente o mesmo ambiente de desenvolvimento. Isso evita conflitos e 
+assegura que o projeto seja executado de maneira consistente em diferentes contextos. A virtualização 
+no desenvolvimento com Python é uma prática essencial. Ao utilizar ambientes virtuais e o arquivo requirements.txt, 
+você garante a coesão do ambiente de desenvolvimento, facilita a colaboração entre 
+membros da equipe e promove a portabilidade do projeto.
+
+Lembre-se de criar e ativar seu ambiente virtual antes de iniciar qualquer desenvolvimento, 
+garantindo uma experiência de codificação estável e consistente.

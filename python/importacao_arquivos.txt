@@ -1,0 +1,15 @@
+Para saber mais: erro de encoding - Como resolver?
+
+import pandas as pd
+df = pd.read_csv('/content/dados.csv')
+
+> UnicodeDecodeError: o codec 'utf-8' não pode decodificar o byte 0xe7 na posição 18: byte de continuação inválido
+
+import chardet
+
+with open('/content/dados.csv', 'rb') as file:
+    print(chardet.detect(file.read()))
+
+{'encoding': 'ISO-8859-1', 'confidence': 0.73, 'language': ''}
+
+df = pd.read_csv('/content/dados.csv', encoding='ISO-8859-1')
